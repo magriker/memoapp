@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView
 from .models import Memo
 
+
 # Create your views here.
 
 

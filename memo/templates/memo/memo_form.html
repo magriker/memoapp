@@ -6,7 +6,7 @@
 {% block content %}
 <h1>メモ作成</h1>
 
-<form mothod="post">
+<form method="post">
   {% csrf_token %} {{ form.as_p }}
   <br />
   <input type="submit" class="btn btn-primary" value="登録" />
