@@ -22,4 +22,5 @@ from memo import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.TopView.as_view(), name="top"),
+    path("memo/", views.MemoCreateView.as_view(), name="form"),
 ]
