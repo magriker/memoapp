@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+<!---->
+{% block title %}削除{% endblock %}
+<!---->
+{% block content %}
+<h1>削除</h1>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %} 以下のタイトルメモを削除してもよろしいですか？<br />
+  {{ object }}<br />
+  {{ form }}
+  <br />
+  <a href="{% url 'list' %}">戻る</a>
+  <input type="submit" value="削除" />
+</form>
+{% endblock %}

@@ -22,6 +22,12 @@
       <button onclick="location.href='{% url 'edit' pk=memo.pk %}'">
         編集
       </button>
+      <button
+        class="btn btn-danger"
+        onclick="location.href='{% url 'delete' pk=memo.pk %}'"
+      >
+        削除
+      </button>
     </td>
   </tr>
   {% endfor %}

@@ -6,9 +6,12 @@
 {% block content %}
 <h1>編集</h1>
 
-{% csrf_token %} {{ form }}
-<br />
-<a href="{% url 'list' %}">戻る</a>
-<input type="submit" value="更新" />
-
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <!---->
+  {{ form }}
+  <br />
+  <a href="{% url 'list' %}">戻る</a>
+  <input type="submit" value="更新" />
+</form>
 {% endblock %}
