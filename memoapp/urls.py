@@ -22,5 +22,8 @@ from memo import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.TopView.as_view(), name="top"),
-    path("memo/", views.MemoCreateView.as_view(), name="form"),
+    path("memo/new", views.MemoCreateView.as_view(), name="form"),
+    path("memo/", views.MemoListView.as_view(), name="list"),
+    path("memo/edit/<int:pk>", views.MemoUpdateView.as_view(), name="edit"),
+    path("crud/delete/<int:pk>", views.MemoDeleteView.as_view(), name="delete"),
 ]

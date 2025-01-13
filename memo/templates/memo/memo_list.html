@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+<!---->
+{% block title %}メモ一覧{% endblock %}
+<!---->
+{% block content %}
+<h1>メモ一覧</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+      <th>アクション</th>
+    </tr>
+  </thead>
+  {% for memo in object_list %}
+  <tr>
+    <td>{{ memo.title }}</td>
+    <td>{{ memo.content }}</td>
+    <td>
+      <button onclick="location.href='{% url 'edit' pk=memo.pk %}'">
+        編集
+      </button>
+      <button
+        class="btn btn-danger"
+        onclick="location.href='{% url 'delete' pk=memo.pk %}'"
+      >
+        削除
+      </button>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}
